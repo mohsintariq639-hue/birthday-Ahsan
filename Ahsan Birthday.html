@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Ahsan</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #ff69b4, #7b2ff7);
+}
+
+.card {
+    width: 100%;
+    max-width: 430px;
+    padding: 30px 20px;
+    border: 2px solid #ffffff99;
+    border-radius: 25px;
+    background: #ffffff25;
+    box-shadow: 0 10px 35px #32105066;
+    animation: appear 1.5s ease;
+}
+
+h1 {
+    font-size: clamp(30px, 8vw, 42px);
+}
+
+h2 {
+    color: #ffe4f5;
+}
+
+.cake {
+    font-size: 65px;
+    animation: bounce 1.5s infinite;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+button {
+    background: white;
+    color: #a329a7;
+    border: none;
+    border-radius: 25px;
+    padding: 13px 22px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#surprise {
+    display: none;
+    margin-top: 20px;
+}
+
+.heart {
+    position: fixed;
+    bottom: -40px;
+    font-size: 25px;
+    pointer-events: none;
+    animation: float 4s linear forwards;
+}
+
+@keyframes bounce {
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="cake">🎂</div>
+
+    <h1>Happy Birthday, Ahsan! 🎉</h1>
+
+    <h2>💗 Crime Partners Forever 💗</h2>
+
+    <p>
+        One friendship, two legends! 🤝<br>
+        Masti unlimited, memories endless,<br>
+        and friendship that lasts forever! ✨
+    </p>
+
+    <button onclick="surprise()">
+        Open Your Surprise 🎁
+    </button>
+
+    <div id="surprise">
+        <h2>🎉 Happy Birthday, Ahsan! 🎉</h2>
+
+        <p>
+            You are a legend! 😎<br>
+            Hamesha khush raho aur muskurate raho! 💕
+        </p>
+
+        <p>Crime Partners Forever! 🔥</p>
+    </div>
+
+    <p>Made with ❤️ just for Ahsan</p>
+
+</div>
+
+<script>
+function surprise() {
+    document.getElementById("surprise").style.display = "block";
+
+    const emojis = ["💖", "🎉", "✨", "💗"];
+
+    for (let i = 0; i < 25; i++) {
+        let item = document.createElement("div");
+
+        item.className = "heart";
+
+        item.textContent =
+            emojis[Math.floor(Math.random() * emojis.length)];
+
+        item.style.left = Math.random() * 100 + "vw";
+        item.style.animationDelay = Math.random() * 2 + "s";
+
+        document.body.appendChild(item);
+
+        setTimeout(() => item.remove(), 6000);
+    }
+}
+</script>
+
+</body>
+</html>
